@@ -10,6 +10,8 @@ public class MallardMovement : MonoBehaviour
     public float m_MovementInputValue = 0f;
     public float m_AngleInputValue = 0f;
     public float m_Speed = 3f;
+    public bool m_Caught = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,7 @@ public class MallardMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Goose"))
         {
+            m_Caught = true;
             Debug.Log("Collision with goose");
         }
     }

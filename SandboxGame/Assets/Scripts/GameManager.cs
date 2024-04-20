@@ -1,17 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 using System.Runtime.InteropServices;
 
 
 public class GameManager : MonoBehaviour
 {
     public Canvas canvas;
+    public int m_NumRoundsToWin = 5;     
     public GameObject nameObject;
     public MallardManager[] mallard_list; // This is the list of all mallards
     public GameObject mallard_prefab; // This is the mallard prefab to instantiate when a player joins
     private PlayerJoin[] playerJoins;
-
+    private bool m_GameStarted = false;
+    public string m_RoomCode;
+    public TextMeshProUGUI m_RoomCodeText;
+    public TextMeshProUGUI m_RoomCodePrefaceText;
+    private MallardManager m_GameWinner;
+    private bool handlingPlus = false;
+    private bool handlingMinus = false;
+    public TextMeshProUGUI m_HostStartText;
+    public CameraControl m_CameraControl;
+    public GameObject[] m_SpawnPoints;
+    public TextMeshProUGUI m_HostExitText;
+    public TextMeshProUGUI m_HostPlayAgainText;
+    public TextMeshProUGUI m_MessageText;
+    private WaitForSeconds m_StartWait;
+    public float m_StartDelay = 3f;
+    public float m_EndDelay = 3f;
+    private WaitForSeconds m_EndWait;
+    private int m_PlayerCount = 0;
+    private int m_RoundNumber;
+    private bool m_RoundActive = false;
+    private MallardManager m_RoundWinner;
     // Madder functions that you may call
     // These functions should be conditionally called based on if this is inside a WebGL build, not the editor
     [DllImport("__Internal")]
@@ -26,6 +49,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerJoins = new PlayerJoin[0];
+
+        m_StartWait = new WaitForSeconds(m_StartDelay);
+        m_EndWait = new WaitForSeconds(m_EndDelay);
+
+        StartCoroutine(GameLoop());
     }
 
     void Update()
@@ -99,6 +127,13 @@ public class GameManager : MonoBehaviour
         {
             HandleExit();
         }
+
+        // Test the plus button
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            HandleHostControls(false, true);
+        }
+
     }
 
     // TODO: The following function may be modified or deleted
@@ -123,6 +158,11 @@ public class GameManager : MonoBehaviour
     {
         // TODO: Any of the following code may be modified or deleted
         Debug.Log("Room Code: " + roomCode);
+
+        // Display room code on canvas
+        m_RoomCode = roomCode;
+        m_RoomCodeText.text = roomCode;
+
     }
 
     /*
@@ -165,6 +205,7 @@ public class GameManager : MonoBehaviour
 
         // Add mallard to mallard_list
         AddMallard(playerJoin);
+        m_PlayerCount = newPlayerJoins.Length;
 
         // Add game played to player stats
         playerJoin.stats.addGamePlayed();
@@ -234,21 +275,14 @@ public class GameManager : MonoBehaviour
         // TODO: Any of the following code may be modified or deleted
 
         // Move player based on joystick
-        foreach (Transform child in canvas.transform)
-        {
-            if (child.GetComponent<NameScript>().GetName() == controllerState.name)
-            {
-                child.GetComponent<NameScript>().UpdateXY(controllerState.joystick.x, controllerState.joystick.y);
-            }
-        }
-        
+
         // Empty mallard to hold the matching mallard
         MallardManager matchingMallard = null;
 
         // Check the name of all the mallards for a matching name
         foreach (MallardManager mallard in mallard_list)
         {
-             if (mallard.m_PlayerName == controllerState.name)
+            if (mallard.m_PlayerName == controllerState.name)
             {
                 matchingMallard = mallard;
                 break;
@@ -277,6 +311,11 @@ public class GameManager : MonoBehaviour
             matchingMallard.m_Movement.m_AngleInputValue = angleDegrees;
         }
 
+        if (controllerState.name == mallard_list[0].m_PlayerName)
+        {
+            HandleHostControls(false, controllerState.plus);
+        }
+
     }
 
     private void AddMallard(PlayerJoin playerJoin)
@@ -292,8 +331,13 @@ public class GameManager : MonoBehaviour
         {
             newMallardList[i] = mallard_list[i];
         }
+        if (mallard_list.Length == 0)
+        {
+            newMallardManager.m_IsHost = true;
+        }
         newMallardList[mallard_list.Length] = newMallardManager;
         mallard_list = newMallardList;
+
     }
 
     private void RemoveMallard(string playerName)
@@ -315,6 +359,311 @@ public class GameManager : MonoBehaviour
         mallard_list = newMallardList;
     }
 
+    private void HandleHostControls(bool minus, bool plus)
+    {
+        // handle minus
+        if (minus == true && !handlingMinus && m_GameWinner != null)
+        {
+            handlingMinus = true;
+            HandleExit();
+        }
+        else if (minus == false)
+        {
+            handlingMinus = false;
+        }
+
+        // handle plus
+        if (plus == true && !handlingPlus && (m_GameWinner != null || m_GameStarted == false) && m_PlayerCount > 1)
+        {
+            handlingPlus = true;
+            if (m_GameStarted == false)
+            {
+                HandleBegin();
+            }
+            else
+            {
+                PlayAgain();
+            }
+        }
+        else if (plus == false)
+        {
+            handlingPlus = false;
+        }
+    }
+
+    public void HandleBegin()
+    {
+        m_GameStarted = true;
+    }
+
+    private IEnumerator WaitingForPlayersLoop()
+    {
+        while (!m_GameStarted)
+        {
+            yield return null;
+        }
+    }
+
+    private IEnumerator GameLoop()
+    {
+        if (m_GameStarted == false)
+        {
+            yield return StartCoroutine(WaitingForPlayersLoop());
+
+            m_HostStartText.gameObject.SetActive(false);
+            // m_RequiredPlayersText.gameObject.SetActive(false);
+            // m_TitleImage.gameObject.SetActive(false);
+
+            // SpawnAllPlayers();
+
+            SetCameraTargets();
+        }
+
+        yield return StartCoroutine(RoundStarting());
+        yield return StartCoroutine(RoundPlaying());
+        yield return StartCoroutine(RoundEnding());
+
+        if (m_GameStarted)
+        {
+            if (m_GameWinner != null)
+            {
+                StartCoroutine(EndOfGameLoop());
+            }
+            else
+            {
+                StartCoroutine(GameLoop());
+            }
+        }
+    }
+
+
+    private IEnumerator RoundStarting()
+    {
+        ResetAllPlayers();
+        DisablePlayerControl();
+
+        m_CameraControl.SetStartPositionAndSize();
+
+        m_RoundNumber++;
+        m_MessageText.text = "ROUND " + m_RoundNumber;
+
+        yield return m_StartWait;
+    }
+
+
+    private IEnumerator RoundPlaying()
+    {
+        m_RoundActive = true;
+        EnablePlayerControl();
+
+        m_MessageText.text = string.Empty;
+
+        while (!IsDuckCaught())
+        {
+            yield return null;
+        }
+    }
+
+    private bool IsDuckCaught()
+    {
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            if (mallard_list[i].m_Movement.m_Caught)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private MallardManager GetRoundWinner()
+    {
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            if (mallard_list[i].m_Instance.activeSelf)
+                return mallard_list[i];
+        }
+
+        return null;
+    }
+
+    private IEnumerator RoundEnding()
+    {
+        m_RoundActive = false;
+        DisablePlayerControl();
+
+        m_RoundWinner = null;
+
+        m_RoundWinner = GetRoundWinner();
+
+#if UNITY_WEBGL == true && UNITY_EDITOR == false
+        if (m_RoundWinner != null)
+        {
+            for (int i = 0; i < mallard_list.Length; i++)
+            {
+                if (mallard_list[i].m_PlayerName == m_RoundWinner.m_PlayerName)
+                {
+                    mallard_list[i].m_GameStats.addRoundWin();
+                    UpdateStats(mallard_list[i].m_PlayerName, JsonUtility.ToJson(mallard_list[i].m_GameStats));
+                    break;
+                }
+            }
+        }
+#endif
+
+        if (m_RoundWinner != null)
+            m_RoundWinner.m_Wins++;
+
+        m_GameWinner = GetGameWinner();
+
+        string message = EndMessage();
+        m_MessageText.text = message;
+
+        yield return m_EndWait;
+    }
+
+    private MallardManager GetGameWinner()
+    {
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            if (mallard_list[i].m_Wins == m_NumRoundsToWin)
+            {
+#if UNITY_WEBGL == true && UNITY_EDITOR == false
+                    mallard_list[i].m_GameStats.addGameWin();
+                    UpdateStats(mallard_list[i].m_PlayerName, JsonUtility.ToJson(mallard_list[i].m_GameStats));
+#endif
+                return mallard_list[i];
+            }
+        }
+
+        return null;
+    }
+    private string EndMessage()
+    {
+        // if (m_GameStarted == false)
+        // {
+        //     return string.Empty;
+        // }
+
+        // string message = "DRAW!";
+
+        // if (m_RoundWinner != null)
+        //     message = m_RoundWinner.m_ColoredPlayerText + " WINS THE ROUND!";
+
+        // message += "\n\n";
+
+        // for (int i = 0; i < mallard_list.Length; i++)
+        // {
+        //     message += mallard_list[i].m_ColoredPlayerText + ": " + mallard_list[i].m_Wins + " WINS";
+        //     if (i < mallard_list.Length - 1)
+        //     {
+        //         if (i % 2 == 1)
+        //         {
+        //             message += "\n";
+        //         }
+        //         else
+        //         {
+        //             message += "   |   ";
+        //         }
+        //     }
+        // }
+
+        // if (m_GameWinner != null)
+        // {
+        //     message = "";
+        //     m_WinnerText.text = m_GameWinner.m_ColoredPlayerText;
+        //     m_WinnerAnnouncementImage.gameObject.SetActive(true);
+        // }
+        return string.Empty;
+
+        // message = "Game Over!";
+        // return message;
+    }
+
+    private IEnumerator EndOfGameLoop()
+    {
+        // m_WinnerText.text = string.Empty;
+        // m_WinnerAnnouncementImage.gameObject.SetActive(false);
+        // m_MessageText.text = string.Empty;
+        // m_TitleImage.gameObject.SetActive(true);
+        // m_HostPlayAgainText.gameObject.SetActive(true);
+        // m_HostExitText.gameObject.SetActive(true);
+        while (true)
+        {
+            yield return null;
+        }
+    }
+
+    private void SpawnAllPlayers()
+    {
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            mallard_list[i].m_SpawnPoint = m_SpawnPoints[i].transform;
+        }
+    }
+    private void ResetAllPlayers()
+    {
+        // randomize spawn points
+        // for (int i = 0; i < m_SpawnPoints.Length; i++)
+        // {
+        //     int randomIndex = Random.Range(i, m_SpawnPoints.Length);
+        //     GameObject temp = m_SpawnPoints[i];
+        //     m_SpawnPoints[i] = m_SpawnPoints[randomIndex];
+        //     m_SpawnPoints[randomIndex] = temp;
+        // }
+        // for (int i = 0; i < mallard_list.Length; i++)
+        // {
+        //     // assign new spawn point
+        //     mallard_list[i].m_SpawnPoint = m_SpawnPoints[i].transform;
+        //     mallard_list[i].Reset();
+        // }
+    }
+
+    private void EnablePlayerControl()
+    {
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            mallard_list[i].EnableControl();
+        }
+    }
+
+
+    private void DisablePlayerControl()
+    {
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            mallard_list[i].DisableControl();
+        }
+    }
+
+    public void PlayAgain()
+    {
+        // m_HostPlayAgainText.gameObject.SetActive(false);
+        // m_HostExitText.gameObject.SetActive(false);
+        // m_TitleImage.gameObject.SetActive(false);
+        // for (int i = 0; i < m_Tanks.Length; i++)
+        // {
+        //     m_Tanks[i].m_Wins = 0;
+        //     #if UNITY_WEBGL == true && UNITY_EDITOR == false
+        //         m_Tanks[i].m_GameStats.addGamePlayed();
+        //         UpdateStats(m_Tanks[i].m_PlayerName, JsonUtility.ToJson(m_Tanks[i].m_GameStats));
+        //     #endif
+        // }
+        // m_RoundNumber = 0;
+        StartCoroutine(GameLoop());
+    }
+
+    private void SetCameraTargets()
+    {
+        Transform[] targets = new Transform[mallard_list.Length];
+
+        for (int i = 0; i < targets.Length; i++)
+        {
+            targets[i] = mallard_list[i].m_Instance.transform;
+        }
+
+        m_CameraControl.m_Targets = targets;
+    }
     /*
     * Madder class: Message
     * This class is used to serialize messages sent to controllers (both individual and all controllers)
