@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 
+
 public class GameManager : MonoBehaviour
 {
     public Canvas canvas;
     public GameObject nameObject;
+    public MallardManager[] mallard_list; // This is the list of all mallards
+    public GameObject mallard_prefab; // This is the mallard prefab to instantiate when a player joins
     private PlayerJoin[] playerJoins;
 
     // Madder functions that you may call
@@ -116,7 +119,7 @@ public class GameManager : MonoBehaviour
     * This function is called when the uniquely generated code is received from the server
     * You will typically use this code to display the room code on the screen
     */
-    public void RoomCode(string roomCode) 
+    public void RoomCode(string roomCode)
     {
         // TODO: Any of the following code may be modified or deleted
         Debug.Log("Room Code: " + roomCode);
@@ -150,7 +153,7 @@ public class GameManager : MonoBehaviour
         GameObject name = Instantiate(nameObject, canvas.transform);
         name.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
         name.GetComponent<NameScript>().SetName(playerJoin.name);
-        
+
         // Add player to playerJoins array
         PlayerJoin[] newPlayerJoins = new PlayerJoin[playerJoins.Length + 1];
         for (int i = 0; i < playerJoins.Length; i++)
@@ -160,13 +163,16 @@ public class GameManager : MonoBehaviour
         newPlayerJoins[playerJoins.Length] = playerJoin;
         playerJoins = newPlayerJoins;
 
+        // Add mallard to mallard_list
+        AddMallard(playerJoin);
+
         // Add game played to player stats
         playerJoin.stats.addGamePlayed();
         // Update player stats on server
-        #if UNITY_WEBGL && !UNITY_EDITOR // Only call this function if this is a WebGL build
+#if UNITY_WEBGL && !UNITY_EDITOR // Only call this function if this is a WebGL build
         string jsonStats = JsonUtility.ToJson(playerJoin.stats);
         UpdateStats(playerJoin.name, jsonStats);
-        #endif
+#endif
     }
 
     /*
@@ -177,6 +183,8 @@ public class GameManager : MonoBehaviour
     public void PlayerLeft(string playerName)
     {
         // TODO: Any of the following code may be modified or deleted
+        // Remove mallard from mallard_list
+        RemoveMallard(playerName);
 
         // Remove player from playerJoins array
         PlayerJoin[] newPlayerJoins = new PlayerJoin[playerJoins.Length - 1];
@@ -191,12 +199,12 @@ public class GameManager : MonoBehaviour
             else
             {
                 // Exit game if first player (host) leaves
-                #if UNITY_WEBGL && !UNITY_EDITOR // Only call this function if this is a WebGL build
+#if UNITY_WEBGL && !UNITY_EDITOR // Only call this function if this is a WebGL build
                 if (i == 0)
                 {
                     Exit();
                 }
-                #endif
+#endif
                 HandleExit();
                 return;
             }
@@ -212,7 +220,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
     /*
     * Madder function: PlayerControllerState
     * This function is called when the controller state of a player is updated
@@ -233,6 +241,78 @@ public class GameManager : MonoBehaviour
                 child.GetComponent<NameScript>().UpdateXY(controllerState.joystick.x, controllerState.joystick.y);
             }
         }
+        
+        // Empty mallard to hold the matching mallard
+        MallardManager matchingMallard = null;
+
+        // Check the name of all the mallards for a matching name
+        foreach (MallardManager mallard in mallard_list)
+        {
+             if (mallard.m_PlayerName == controllerState.name)
+            {
+                matchingMallard = mallard;
+                break;
+            }
+        }
+
+        if (matchingMallard == null)
+        {
+            // Print error message if no matching mallard is found
+            Debug.LogError("No matching mallard found for player name: " + controllerState.name);
+            return;
+        }
+
+        // Move the mallard
+        float x = controllerState.joystick.x;
+        float y = controllerState.joystick.y;
+        float distance = Mathf.Sqrt(x * x + y * y);
+        distance = distance / 100f;
+        matchingMallard.m_Movement.m_MovementInputValue = distance;
+
+        // Handle rotation
+        if (distance > 0f)
+        {
+            float angleRadians = Mathf.Atan2(x, y);
+            float angleDegrees = angleRadians * Mathf.Rad2Deg;
+            matchingMallard.m_Movement.m_AngleInputValue = angleDegrees;
+        }
+
+    }
+
+    private void AddMallard(PlayerJoin playerJoin)
+    {
+        // Instantiate a new mallard
+        GameObject newMallard = Instantiate(mallard_prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        MallardManager newMallardManager = new MallardManager();
+        newMallardManager.m_Instance = newMallard;
+        newMallardManager.m_PlayerName = playerJoin.name;
+        newMallardManager.Setup();
+        MallardManager[] newMallardList = new MallardManager[mallard_list.Length + 1];
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            newMallardList[i] = mallard_list[i];
+        }
+        newMallardList[mallard_list.Length] = newMallardManager;
+        mallard_list = newMallardList;
+    }
+
+    private void RemoveMallard(string playerName)
+    {
+        MallardManager[] newMallardList = new MallardManager[mallard_list.Length - 1];
+        int j = 0;
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            if (mallard_list[i].m_PlayerName != playerName)
+            {
+                newMallardList[j] = mallard_list[i];
+                j++;
+            }
+            else
+            {
+                Destroy(mallard_list[i].m_Instance);
+            }
+        }
+        mallard_list = newMallardList;
     }
 
     /*
@@ -242,7 +322,8 @@ public class GameManager : MonoBehaviour
     *   - "vibrate": Vibrate the player's controller
     * The message parameter has no current use for Madder controllers
     */
-    public class Message {
+    public class Message
+    {
         public string name;
         public string message;
     }
@@ -255,11 +336,13 @@ public class GameManager : MonoBehaviour
     * You may create children classes of Stat to store more complex stats
     */
     [System.Serializable]
-    public class Stat {
+    public class Stat
+    {
         public string title;
         public int value;
 
-        public Stat(string initTitle, int initValue) {
+        public Stat(string initTitle, int initValue)
+        {
             title = initTitle;
             value = initValue;
         }
@@ -273,13 +356,16 @@ public class GameManager : MonoBehaviour
     * No fields or methods are required and you can add any additional fields or methods
     */
     [System.Serializable]
-    public class GameStats {
+    public class GameStats
+    {
         // TODO: Add/Remove any fields of type Stat or a child class of Stat here
         public Stat gamesPlayed;
-        public GameStats() {
+        public GameStats()
+        {
             gamesPlayed = new Stat("Games Played", 0);
         }
-        public void addGamePlayed() {
+        public void addGamePlayed()
+        {
             gamesPlayed.value++;
         }
     }
@@ -289,9 +375,10 @@ public class GameManager : MonoBehaviour
     * This class is used to serialize the data sent to the PlayerJoined function
     * This class should not be altered
     */
-    public class PlayerJoin {
+    public class PlayerJoin
+    {
         public string name;
-        public GameStats stats; 
+        public GameStats stats;
     }
 
     /*
@@ -300,10 +387,12 @@ public class GameManager : MonoBehaviour
     * This class should not be altered for the Madder controller
     */
     [System.Serializable]
-    public class Joystick {
+    public class Joystick
+    {
         public int x;
-        public int y; 
-        public Joystick(int initX, int initY) {
+        public int y;
+        public Joystick(int initX, int initY)
+        {
             x = initX;
             y = initY;
         }
@@ -314,7 +403,8 @@ public class GameManager : MonoBehaviour
     * This class is used to serialize the data sent to the PlayerControllerState function
     * This class should not be altered for the Madder controller
     */
-    public class ControllerState {
+    public class ControllerState
+    {
         public string name;
         public Joystick joystick;
         public bool circle;
