@@ -1,0 +1,819 @@
+Unity Editor version:    2022.3.22f1 (887be4894c44)
+Branch:                  2022.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 14.4.1 (Build 23E224)
+Darwin version:          23.4.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+/Users/scienceresearch/Documents/GitHub/SandBoxGame/SandboxGame
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+54545
+Successfully changed project path to: /Users/scienceresearch/Documents/GitHub/SandBoxGame/SandboxGame
+/Users/scienceresearch/Documents/GitHub/SandBoxGame/SandboxGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [140704536879360] Host "[IP] 127.51.68.120 [Port] 0 [Flags] 2 [Guid] 3062435170 [EditorId] 3062435170 [Version] 1048832 [Id] OSXEditor(0,Grahams-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [140704536879360] Host "[IP] 127.51.68.120 [Port] 0 [Flags] 2 [Guid] 3062435170 [EditorId] 3062435170 [Version] 1048832 [Id] OSXEditor(0,Grahams-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 21.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.22f1 (887be4894c44)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/scienceresearch/Documents/GitHub/SandBoxGame/SandboxGame/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Color LCD preferred device: AMD Radeon Pro 5300M (high power)
+Metal devices available: 2
+0: AMD Radeon Pro 5300M (high power)
+1: Intel(R) UHD Graphics 630 (low power)
+Using device AMD Radeon Pro 5300M (high power)
+Initializing Metal device caps: AMD Radeon Pro 5300M
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56223
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.22f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.006425 seconds.
+- Loaded All Assemblies, in  0.593 seconds
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.379 seconds
+Domain Reload Profiling: 973ms
+	BeginReloadAssembly (193ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (82ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (225ms)
+		LoadAssemblies (194ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (222ms)
+			TypeCache.Refresh (218ms)
+				TypeCache.ScanAssembly (199ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (380ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (292ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (202ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.816 seconds
+Refreshing native plugins compatible for Editor in 1.29 ms, found 2 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.858 seconds
+Domain Reload Profiling: 1674ms
+	BeginReloadAssembly (191ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (506ms)
+		LoadAssemblies (391ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (205ms)
+			TypeCache.Refresh (181ms)
+				TypeCache.ScanAssembly (164ms)
+			ScanForSourceGeneratedMonoScriptInfo (14ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (859ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (668ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (58ms)
+			ProcessInitializeOnLoadAttributes (576ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launching external process: /Applications/Unity/Hub/Editor/2022.3.22f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3102 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (51.7 KB). Loaded Objects now: 3565.
+Memory consumption went from 126.9 MB to 126.9 MB.
+Total: 4.217500 ms (FindLiveObjects: 0.290201 ms CreateObjectMapping: 0.265586 ms MarkObjects: 3.538013 ms  DeleteObjects: 0.122703 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 223704.965074 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wood fence4.fbx
+  artifactKey: Guid(f3046a3d835aca94b8adf44958803301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wood fence4.fbx using Guid(f3046a3d835aca94b8adf44958803301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f90bdb76e4da3a4454695d0fee17d6f') in 0.407405 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000142 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/grass hill.fbx
+  artifactKey: Guid(35c8c09b06fd6ef46ad1c259f6667410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/grass hill.fbx using Guid(35c8c09b06fd6ef46ad1c259f6667410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '762eea25bf937e9794106fe2dd979849') in 0.037768 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield 4x4.fbx
+  artifactKey: Guid(a1ea18b9dfc056c44a4bb5fc28e13121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield 4x4.fbx using Guid(a1ea18b9dfc056c44a4bb5fc28e13121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95ba8b871e870f1e30005c3d7d66ff9b') in 0.059974 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/grass hill 1.fbx
+  artifactKey: Guid(4a203c11503d4ed45a5d22e5b64c16b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/grass hill 1.fbx using Guid(4a203c11503d4ed45a5d22e5b64c16b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e69b66f92d85b98e6e73bc43bb348cf4') in 0.050139 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/water mesh.fbx
+  artifactKey: Guid(f209709cdda9d544bb4ab920cb0eb56d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/water mesh.fbx using Guid(f209709cdda9d544bb4ab920cb0eb56d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ce45f33095adc94fa7ca320316af5d9') in 0.015439 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield.fbx
+  artifactKey: Guid(7cb460056b265af4bbe64bf6dc1af6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield.fbx using Guid(7cb460056b265af4bbe64bf6dc1af6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13bd8886eb386063f7effa72c7af31ae') in 0.042410 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Vehicles/pickup truck.fbx
+  artifactKey: Guid(2fbe3246a8a7f2f44a2f43041f3148f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Vehicles/pickup truck.fbx using Guid(2fbe3246a8a7f2f44a2f43041f3148f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0888900d2445a70a653cc3d03bb9f4e8') in 0.054618 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky red house.fbx
+  artifactKey: Guid(dbd8620086d65bb4dbbf0902c30ef267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky red house.fbx using Guid(dbd8620086d65bb4dbbf0902c30ef267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '208bfd8076f0717f3b0588a500f3dc10') in 0.051456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Characters/Farmer/fork.fbx
+  artifactKey: Guid(b2fa315e249b1e04da1e742e12e5d171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Characters/Farmer/fork.fbx using Guid(b2fa315e249b1e04da1e742e12e5d171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '146d72da31c5cb2436b62772c58a67a6') in 0.027706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky green house.fbx
+  artifactKey: Guid(404cc21cb0fe2174ea8a498d5a237cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky green house.fbx using Guid(404cc21cb0fe2174ea8a498d5a237cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f128ce512354865feb8107901ca5da0c') in 0.053214 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/rock3.fbx
+  artifactKey: Guid(2deccbeb57991b9478f81c48b0e92a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/rock3.fbx using Guid(2deccbeb57991b9478f81c48b0e92a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '992ae15e7db056946da76edb85a45f64') in 0.027932 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden bridge.fbx
+  artifactKey: Guid(a26b800f5693181458f07855d4ba8082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden bridge.fbx using Guid(a26b800f5693181458f07855d4ba8082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1636920e5802f52becc6d1188653c96d') in 0.052081 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Characters/Chicken NPC/chicken walkpath 1.fbx
+  artifactKey: Guid(2fafbe96d44407746a49a383975a3e66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Characters/Chicken NPC/chicken walkpath 1.fbx using Guid(2fafbe96d44407746a49a383975a3e66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82ef82a7f3c000b59ba2e1e6eaa1ec3b') in 0.037798 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.015656 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Vehicles/hot air balloon.fbx
+  artifactKey: Guid(52a9248304bd9c742811431f47b0bdec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Vehicles/hot air balloon.fbx using Guid(52a9248304bd9c742811431f47b0bdec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784eb2a9f4a39bfe86bd6558bbbfa237') in 0.030677 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested trees 2.fbx
+  artifactKey: Guid(b3d43186c5fec6f4a821f9f435a50afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested trees 2.fbx using Guid(b3d43186c5fec6f4a821f9f435a50afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44ecc2746afefae7a1364eb2a1ed790e') in 0.048830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/large water tower.fbx
+  artifactKey: Guid(a63f17f8d36ba7f45b2ec2c7d72e04ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/large water tower.fbx using Guid(a63f17f8d36ba7f45b2ec2c7d72e04ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d025404736f45b12181f65153be89b6') in 0.052174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden barrel.fbx
+  artifactKey: Guid(3279db2dcd1e68540bc015ed6ae60e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden barrel.fbx using Guid(3279db2dcd1e68540bc015ed6ae60e2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4c444b4fc96bc88b0f33a2d9cd1fc54') in 0.037583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirt-mound.fbx
+  artifactKey: Guid(30f7888ca49d8274a9f7479fb4671785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirt-mound.fbx using Guid(30f7888ca49d8274a9f7479fb4671785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '222f5d3ac9b6d439296a4985aa54a746') in 0.015657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested pines large 2.fbx
+  artifactKey: Guid(c6c3dbb7b2d6100468f9e839d4b6da8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested pines large 2.fbx using Guid(c6c3dbb7b2d6100468f9e839d4b6da8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e928c4a4aa7f04e4569cab6f7853d1e4') in 0.061996 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/peachtree.fbx
+  artifactKey: Guid(bcf0826803006744f9da4d9126b8e568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/peachtree.fbx using Guid(bcf0826803006744f9da4d9126b8e568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb467c35a5ef40f2f319a2f4b1a9df23') in 0.045802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Tensori/Low-polyFarm/Animations/farmer anims.fbx
+  artifactKey: Guid(dc91778008880d3448c98a885cda4f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Animations/farmer anims.fbx using Guid(dc91778008880d3448c98a885cda4f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ab670cb25083da892a89af4f5b3a4c1') in 0.240606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 101
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/waterfall.fbx
+  artifactKey: Guid(767e347809a31564eba99b383eea7dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/waterfall.fbx using Guid(767e347809a31564eba99b383eea7dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b377e72347308b5963cab4d85dbd8f01') in 0.056888 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Vehicles/hot airballoon crash.fbx
+  artifactKey: Guid(07a55ae3862d801458c63ace26aec6b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Vehicles/hot airballoon crash.fbx using Guid(07a55ae3862d801458c63ace26aec6b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed798ae797a42fef8f68d2359fb814c7') in 0.054756 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.294451 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/grass hill3.fbx
+  artifactKey: Guid(2c90354e54663a045867596c1afc7237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/grass hill3.fbx using Guid(2c90354e54663a045867596c1afc7237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37433e21e90089b2b8d8b1fe5c8ed481') in 0.046474 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/trunk3.fbx
+  artifactKey: Guid(158aa33e987411b4b88d70cf78240b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/trunk3.fbx using Guid(158aa33e987411b4b88d70cf78240b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b43a45fea3062ed6757477113cefb177') in 0.036701 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirtground.fbx
+  artifactKey: Guid(52c0f0c967227e84a89b377a097fd030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirtground.fbx using Guid(52c0f0c967227e84a89b377a097fd030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e15eafa5cd76ef39ff4961f710714e9') in 0.036182 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested trees 3.fbx
+  artifactKey: Guid(93a39d33e49599a48afe5011cc9430ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested trees 3.fbx using Guid(93a39d33e49599a48afe5011cc9430ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec91db00f3f59618db98d4271408ed9') in 0.055418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hill3.fbx
+  artifactKey: Guid(2359ea778e504be43bc7a496012f07b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hill3.fbx using Guid(2359ea778e504be43bc7a496012f07b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5bfb5d4ec66048c5ebd06f6ea7defd8') in 0.035445 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/water tower.fbx
+  artifactKey: Guid(5444837747b57db408b6663b35e90bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/water tower.fbx using Guid(5444837747b57db408b6663b35e90bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e920fce1e5392782537ca3a9a22610cf') in 0.055162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/cloud2.fbx
+  artifactKey: Guid(37dcae9cc0c35bc4fa9c1f130cba41eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/cloud2.fbx using Guid(37dcae9cc0c35bc4fa9c1f130cba41eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0185a594be3bc3ab49dd7ce21d952654') in 0.036234 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/red barn.fbx
+  artifactKey: Guid(305bb662049163f4890601716678b26e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/red barn.fbx using Guid(305bb662049163f4890601716678b26e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7842c4c888e2be36156505279e60ed0d') in 0.050911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/flowers-red.fbx
+  artifactKey: Guid(e29db77e917d0af43aa04915a00fa72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/flowers-red.fbx using Guid(e29db77e917d0af43aa04915a00fa72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '074ffa2da6e04d11fefe8449c8ae8b2a') in 0.055569 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000326 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/pumpkinfield.fbx
+  artifactKey: Guid(7ebbfcd1c29caf64e80335b906ee73b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/pumpkinfield.fbx using Guid(7ebbfcd1c29caf64e80335b906ee73b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec897f74c1b14014bfce5ed2d836f7e') in 0.056683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/flowers-yellow.fbx
+  artifactKey: Guid(43d4fa75c1cf69740af36bb725312574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/flowers-yellow.fbx using Guid(43d4fa75c1cf69740af36bb725312574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0ea243584f4c982d6a0d3f29091a976') in 0.055896 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 5.563301 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden chair.fbx
+  artifactKey: Guid(675019aaa2b610a478a50496d8eb1c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden chair.fbx using Guid(675019aaa2b610a478a50496d8eb1c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c70e862d3e90cdcc0c5b84fbf748c087') in 0.033884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 102.453685 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/appletree.fbx
+  artifactKey: Guid(d8dedad394129ab4cacb689f503c4392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/appletree.fbx using Guid(d8dedad394129ab4cacb689f503c4392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4c7b97551cb16d9cd1f15e0dc95f774') in 0.326984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested fruittrees2.fbx
+  artifactKey: Guid(385584987cf6bbb4dadf59421733efe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested fruittrees2.fbx using Guid(385584987cf6bbb4dadf59421733efe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8499be13a8b3f3d46b968c85ca3afce2') in 0.055068 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield 4x4.fbx
+  artifactKey: Guid(a1ea18b9dfc056c44a4bb5fc28e13121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield 4x4.fbx using Guid(a1ea18b9dfc056c44a4bb5fc28e13121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '160cdf9b4823321fd7d725d126973940') in 0.073150 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/large tree.fbx
+  artifactKey: Guid(2c4f87758287782438807a0a5a9f520f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/large tree.fbx using Guid(2c4f87758287782438807a0a5a9f520f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '578307748decf89591fd8b5be3c0d21b') in 0.064097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/rock4.fbx
+  artifactKey: Guid(fbffbd3980ddbec4c91b10c4f2641856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/rock4.fbx using Guid(fbffbd3980ddbec4c91b10c4f2641856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2cc2dc25e21a4f5733cf6b687c8bcd6') in 0.038801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000122 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/empty crate.fbx
+  artifactKey: Guid(093c386781641e24399cf443ba40bd2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/empty crate.fbx using Guid(093c386781641e24399cf443ba40bd2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d108402af57c77dac56aea058a83093') in 0.043390 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield.fbx
+  artifactKey: Guid(7cb460056b265af4bbe64bf6dc1af6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield.fbx using Guid(7cb460056b265af4bbe64bf6dc1af6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2a2d5b4ccdc253b30c67de35a3fb8ea') in 0.036701 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 19
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Characters/Farmer/fork.fbx
+  artifactKey: Guid(b2fa315e249b1e04da1e742e12e5d171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Characters/Farmer/fork.fbx using Guid(b2fa315e249b1e04da1e742e12e5d171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33b42a06c0184ac5fdf658e17072bd25') in 0.033243 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/finishline.fbx
+  artifactKey: Guid(0f439f9c214b3764586bbdf9417b671b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/finishline.fbx using Guid(0f439f9c214b3764586bbdf9417b671b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3225475e5313ed704f55797edc1eab94') in 0.106039 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 47
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/large water tower.fbx
+  artifactKey: Guid(a63f17f8d36ba7f45b2ec2c7d72e04ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/large water tower.fbx using Guid(a63f17f8d36ba7f45b2ec2c7d72e04ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e324c82bed6a6727e2462538f68b05d0') in 0.047106 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested pines large 2.fbx
+  artifactKey: Guid(c6c3dbb7b2d6100468f9e839d4b6da8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested pines large 2.fbx using Guid(c6c3dbb7b2d6100468f9e839d4b6da8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cc85fe0befb9b94eb3fddd6e5a32aac') in 0.050183 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/log shelter.fbx
+  artifactKey: Guid(615e64afae6b05243a6b3c47c7cbf24b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/log shelter.fbx using Guid(615e64afae6b05243a6b3c47c7cbf24b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc37550677b1daacf62dbbe54fc9e1c6') in 0.034928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/leekField.fbx
+  artifactKey: Guid(9cece6e4d1283304c9e0733d1080c94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/leekField.fbx using Guid(9cece6e4d1283304c9e0733d1080c94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebc05c42e5376434f8bf51d630c37108') in 0.047519 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested fruittrees.fbx
+  artifactKey: Guid(d02dbc152ba50a04cb29d34583a4c148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested fruittrees.fbx using Guid(d02dbc152ba50a04cb29d34583a4c148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '957516e840e5b451c4d4ac90d2415412') in 0.061708 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Characters/Cow/Cow.fbx
+  artifactKey: Guid(112ecf86b2c933543884034e26802766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Characters/Cow/Cow.fbx using Guid(112ecf86b2c933543884034e26802766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac08c1661aa122b9ef4a252f9e39d11') in 0.070588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 137
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested pines.fbx
+  artifactKey: Guid(a4ceb1b9ec0f1a0479793f46ba5d316b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested pines.fbx using Guid(a4ceb1b9ec0f1a0479793f46ba5d316b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0be2043ec9a6d37813b2b1e614d29c9a') in 0.048375 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/pinetree1.fbx
+  artifactKey: Guid(5e1231d150c83e942881ebdb2dfda722) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/pinetree1.fbx using Guid(5e1231d150c83e942881ebdb2dfda722) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '099ac2a2015b813a3589cb7182e984cd') in 0.033856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/haybale.fbx
+  artifactKey: Guid(92d7e45fee09dec49b2e910b011dbd13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/haybale.fbx using Guid(92d7e45fee09dec49b2e910b011dbd13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bb15d88a15b86d2d5e6d43e59ea35c8') in 0.050734 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirtground.fbx
+  artifactKey: Guid(52c0f0c967227e84a89b377a097fd030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirtground.fbx using Guid(52c0f0c967227e84a89b377a097fd030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db3cf09b09247054f592cbb2a721424') in 0.043338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested trees 3.fbx
+  artifactKey: Guid(93a39d33e49599a48afe5011cc9430ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/Nested/nested trees 3.fbx using Guid(93a39d33e49599a48afe5011cc9430ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '442d3b46b9a82a0c5c8d8b5cac8804ed') in 0.066922 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000125 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirtroad.fbx
+  artifactKey: Guid(575bfeca550117d418622b16b605e0d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/dirtroad.fbx using Guid(575bfeca550117d418622b16b605e0d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c11223ccca01a73fc00940c153c9050f') in 0.018825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hill3.fbx
+  artifactKey: Guid(2359ea778e504be43bc7a496012f07b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hill3.fbx using Guid(2359ea778e504be43bc7a496012f07b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ef015d8750c6214eec6c349ca481272') in 0.036467 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/mountain2 1.fbx
+  artifactKey: Guid(5e32b8aaec1ada34aa124716c2c3095f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/mountain2 1.fbx using Guid(5e32b8aaec1ada34aa124716c2c3095f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db1078d91b0368e0563247d5787cab1d') in 0.047067 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/cloud2.fbx
+  artifactKey: Guid(37dcae9cc0c35bc4fa9c1f130cba41eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/cloud2.fbx using Guid(37dcae9cc0c35bc4fa9c1f130cba41eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f425361fee92859a6f05cdfd9187a99') in 0.033771 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/electric pole.fbx
+  artifactKey: Guid(760da84416d34c84cba164328ebb7074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/electric pole.fbx using Guid(760da84416d34c84cba164328ebb7074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '997e09c32efcba015aec7e520623dad5') in 0.038958 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/flowers-red.fbx
+  artifactKey: Guid(e29db77e917d0af43aa04915a00fa72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/flowers-red.fbx using Guid(e29db77e917d0af43aa04915a00fa72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e184c19328c8d169d77881db199da02') in 0.048655 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/pumpkinfield.fbx
+  artifactKey: Guid(7ebbfcd1c29caf64e80335b906ee73b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/pumpkinfield.fbx using Guid(7ebbfcd1c29caf64e80335b906ee73b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6848a5cc99bb2ddeeb3d65c9cc715cc') in 0.053662 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield large.fbx
+  artifactKey: Guid(afb481d2422542948b7df607503157cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/hayfield large.fbx using Guid(afb481d2422542948b7df607503157cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0381137c3a40520e19c6891363b24b76') in 0.054991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/pinetree2.fbx
+  artifactKey: Guid(40f0348b1b1d882429f951a7d439d5d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/pinetree2.fbx using Guid(40f0348b1b1d882429f951a7d439d5d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e58b9e8307809af119e5afceb3b0a78') in 0.036509 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 1.675027 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/rock5.fbx
+  artifactKey: Guid(9706153c875878b45b0696390f0260b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/rock5.fbx using Guid(9706153c875878b45b0696390f0260b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3ebe10bc08e7ed84162a24ff791557a') in 0.022501 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/stall.fbx
+  artifactKey: Guid(2c3a947587260524ca06e864097c63d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/stall.fbx using Guid(2c3a947587260524ca06e864097c63d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fafcdf7371ba1195381de1142192a98') in 0.042341 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/trunk1.fbx
+  artifactKey: Guid(1253ac5ae4fb2f6469ce1aa93a64a63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/trunk1.fbx using Guid(1253ac5ae4fb2f6469ce1aa93a64a63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dae71783bcf38f2e484927b4dba94fa') in 0.031699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/signpost.fbx
+  artifactKey: Guid(06454323f96e6354287a77607b4c057d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/signpost.fbx using Guid(06454323f96e6354287a77607b4c057d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6696661907fbad47e97422fb98c5e748') in 0.036157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/waterfall.fbx
+  artifactKey: Guid(767e347809a31564eba99b383eea7dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/waterfall.fbx using Guid(767e347809a31564eba99b383eea7dc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ffcf161a28621a6fb7d60b868f20db7') in 0.053368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky yellow house.fbx
+  artifactKey: Guid(ddd8ed2b006045d4295081d62ff89dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky yellow house.fbx using Guid(ddd8ed2b006045d4295081d62ff89dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '793036ce4cca523e1ca3f0400d1df82d') in 0.060538 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky red house.fbx
+  artifactKey: Guid(dbd8620086d65bb4dbbf0902c30ef267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/wonky red house.fbx using Guid(dbd8620086d65bb4dbbf0902c30ef267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25c53035c39a9fa592d557ed009d375e') in 0.055196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden bridge.fbx
+  artifactKey: Guid(a26b800f5693181458f07855d4ba8082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden bridge.fbx using Guid(a26b800f5693181458f07855d4ba8082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72756b3999a55ea3cea1fb85fba050a9') in 0.051945 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wood fence2.fbx
+  artifactKey: Guid(dde98d64b7aa01845881f828ddb8592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wood fence2.fbx using Guid(dde98d64b7aa01845881f828ddb8592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50b86f5003a0f46c85aae15878255173') in 0.037838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden barrels.fbx
+  artifactKey: Guid(a9768db9acbf107438701dd57f93a867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden barrels.fbx using Guid(a9768db9acbf107438701dd57f93a867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6487c326e4dcd3431e0ea71dfd51a0e6') in 0.055217 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/windmill .fbx
+  artifactKey: Guid(4b83d2d9a51173c4a9de9f372764d617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/windmill .fbx using Guid(4b83d2d9a51173c4a9de9f372764d617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f62a796c1168a2b37d6c99639ca62f25') in 0.093029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 28
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Buildings/silo.fbx
+  artifactKey: Guid(75dbe8c8158afe84c807fd573cc1a4a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Buildings/silo.fbx using Guid(75dbe8c8158afe84c807fd573cc1a4a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '065c34742d78b866df0fc306c38ee68d') in 0.053129 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden ramp.fbx
+  artifactKey: Guid(b912a05dcefeb8e469f53cc30c119e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/wooden ramp.fbx using Guid(b912a05dcefeb8e469f53cc30c119e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09498203d508136fce28366bfabea2ea') in 0.039539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Tensori/Low-polyFarm/Art/Models/Environment/rocks.fbx
+  artifactKey: Guid(daad67668aa3acc42bae2bff355765ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tensori/Low-polyFarm/Art/Models/Environment/rocks.fbx using Guid(daad67668aa3acc42bae2bff355765ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5babd951e8e7f839d49cbfdf8e830f7f') in 0.039079 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 89, details: Operation aborted.
+AssetImportWorker is now disconnected from the server
+Process exiting
