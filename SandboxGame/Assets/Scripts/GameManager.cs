@@ -189,11 +189,6 @@ public class GameManager : MonoBehaviour
             playerJoin.stats.gamesPlayed = new Stat("Games Played", 0);
         }
 
-        // Create player name on canvas
-        GameObject name = Instantiate(nameObject, canvas.transform);
-        name.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
-        name.GetComponent<NameScript>().SetName(playerJoin.name);
-
         // Add player to playerJoins array
         PlayerJoin[] newPlayerJoins = new PlayerJoin[playerJoins.Length + 1];
         for (int i = 0; i < playerJoins.Length; i++)
@@ -611,12 +606,12 @@ public class GameManager : MonoBehaviour
         //     m_SpawnPoints[i] = m_SpawnPoints[randomIndex];
         //     m_SpawnPoints[randomIndex] = temp;
         // }
-        // for (int i = 0; i < mallard_list.Length; i++)
-        // {
-        //     // assign new spawn point
-        //     mallard_list[i].m_SpawnPoint = m_SpawnPoints[i].transform;
-        //     mallard_list[i].Reset();
-        // }
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            // assign new spawn point
+            // mallard_list[i].m_SpawnPoint = m_SpawnPoints[i].transform;
+            mallard_list[i].Reset();
+        }
     }
 
     private void EnablePlayerControl()

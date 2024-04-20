@@ -48,10 +48,14 @@ public class MallardManager
 
     public void Reset()
     {
-        m_Instance.transform.position = m_SpawnPoint.position;
-        m_Instance.transform.rotation = m_SpawnPoint.rotation;
+        // Set positon to 0 and rotation to 0
 
-        m_Instance.SetActive(false);
-        m_Instance.SetActive(true);
+        m_Instance.transform.position = new Vector3(0, 0, 0);
+        m_Instance.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+        // m_Instance.SetActive(false);
+        // m_Instance.SetActive(true);
+
+        m_Movement.m_Caught = false;
     }
 }
