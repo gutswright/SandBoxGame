@@ -445,7 +445,6 @@ public class GameManager : MonoBehaviour
         yield return m_StartWait;
     }
 
-
     private IEnumerator RoundPlaying()
     {
         m_RoundActive = true;
@@ -535,44 +534,42 @@ public class GameManager : MonoBehaviour
     }
     private string EndMessage()
     {
-        // if (m_GameStarted == false)
-        // {
-        //     return string.Empty;
-        // }
+        if (m_GameStarted == false)
+        {
+            return string.Empty;
+        }
 
-        // string message = "DRAW!";
+        string message = "DRAW!";
 
-        // if (m_RoundWinner != null)
-        //     message = m_RoundWinner.m_ColoredPlayerText + " WINS THE ROUND!";
+        if (m_RoundWinner != null)
+            message = m_RoundWinner.m_PlayerName + " WINS THE ROUND!";
 
-        // message += "\n\n";
+        message += "\n\n";
 
-        // for (int i = 0; i < mallard_list.Length; i++)
-        // {
-        //     message += mallard_list[i].m_ColoredPlayerText + ": " + mallard_list[i].m_Wins + " WINS";
-        //     if (i < mallard_list.Length - 1)
-        //     {
-        //         if (i % 2 == 1)
-        //         {
-        //             message += "\n";
-        //         }
-        //         else
-        //         {
-        //             message += "   |   ";
-        //         }
-        //     }
-        // }
+        for (int i = 0; i < mallard_list.Length; i++)
+        {
+            message += mallard_list[i].m_PlayerName + ": " + mallard_list[i].m_Wins + " WINS";
+            if (i < mallard_list.Length - 1)
+            {
+                if (i % 2 == 1)
+                {
+                    message += "\n";
+                }
+                else
+                {
+                    message += "   |   ";
+                }
+            }
+        }
 
-        // if (m_GameWinner != null)
-        // {
-        //     message = "";
-        //     m_WinnerText.text = m_GameWinner.m_ColoredPlayerText;
-        //     m_WinnerAnnouncementImage.gameObject.SetActive(true);
-        // }
-        return string.Empty;
+        if (m_GameWinner != null)
+        {
+            message = "";
+            // m_WinnerText.text = m_GameWinner.m_PlayerName;
+            // m_WinnerAnnouncementImage.gameObject.SetActive(true);
+        }
 
-        // message = "Game Over!";
-        // return message;
+        return message;
     }
 
     private IEnumerator EndOfGameLoop()
@@ -581,8 +578,8 @@ public class GameManager : MonoBehaviour
         // m_WinnerAnnouncementImage.gameObject.SetActive(false);
         // m_MessageText.text = string.Empty;
         // m_TitleImage.gameObject.SetActive(true);
-        // m_HostPlayAgainText.gameObject.SetActive(true);
-        // m_HostExitText.gameObject.SetActive(true);
+        m_HostPlayAgainText.gameObject.SetActive(true);
+        m_HostExitText.gameObject.SetActive(true);
         while (true)
         {
             yield return null;
