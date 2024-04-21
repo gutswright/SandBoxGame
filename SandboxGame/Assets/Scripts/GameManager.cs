@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 public class GameManager : MonoBehaviour
 {
     public Canvas canvas;
-    public int m_NumRoundsToWin = 5;     
+    public int m_NumRoundsToWin = 5;
     public GameObject nameObject;
     public MallardManager[] mallard_list; // This is the list of all mallards
     public GameObject mallard_prefab; // This is the mallard prefab to instantiate when a player joins
@@ -58,82 +58,84 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         // Testing Madder functions
         // TODO: This code should be commented out or removed before submission
-
-        // Test RoomCode
-        // TODO: Any of the following code may be modified or deleted
-        if (Input.GetKeyDown(KeyCode.R))
+        if (true)
         {
-            RoomCode("ABCD");
-        }
-
-        // Test PlayerJoined
-        // TODO: Any of the following code may be modified or deleted
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            PlayerJoin playerJoin = new PlayerJoin();
-            playerJoin.name = "Player " + playerJoins.Length;
-            playerJoin.stats = new GameStats();
-            string jsonPlayerJoin = JsonUtility.ToJson(playerJoin);
-            PlayerJoined(jsonPlayerJoin);
-        }
-
-        // Test PlayerLeft
-        // TODO: Any of the following code may be modified or deleted
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            if (playerJoins.Length == 0)
+            // Test RoomCode
+            // TODO: Any of the following code may be modified or deleted
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                return;
+                RoomCode("ABCD");
             }
-            PlayerLeft("Player 0");
-        }
 
-        // Test PlayerControllerState for Player 0
-        // TODO: Any of the following code may be modified or deleted
-        if (playerJoins.Length > 0)
-        {
-            Joystick joystick = new Joystick(0, 0);
-            if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+            // Test PlayerJoined
+            // TODO: Any of the following code may be modified or deleted
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                joystick.y = 100;
+                PlayerJoin playerJoin = new PlayerJoin();
+                playerJoin.name = "Player " + playerJoins.Length;
+                playerJoin.stats = new GameStats();
+                string jsonPlayerJoin = JsonUtility.ToJson(playerJoin);
+                PlayerJoined(jsonPlayerJoin);
             }
-            if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
-            {
-                joystick.y = -100;
-            }
-            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-            {
-                joystick.x = -100;
-            }
-            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
-            {
-                joystick.x = 100;
-            }
-            ControllerState controllerState = new ControllerState();
-            controllerState.name = playerJoins[0].name;
-            controllerState.joystick = joystick;
-            controllerState.circle = false;
-            controllerState.triangle = false;
-            controllerState.plus = false;
-            string jsonControllerState = JsonUtility.ToJson(controllerState);
-            PlayerControllerState(jsonControllerState);
-        }
 
-        // Test HandleExit
-        // TODO: Any of the following code may be modified or deleted
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            HandleExit();
-        }
+            // Test PlayerLeft
+            // TODO: Any of the following code may be modified or deleted
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                if (playerJoins.Length == 0)
+                {
+                    return;
+                }
+                PlayerLeft("Player 0");
+            }
 
-        // Test the plus button
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            HandleHostControls(false, true);
-        }
+            // Test PlayerControllerState for Player 0
+            // TODO: Any of the following code may be modified or deleted
+            if (playerJoins.Length > 0)
+            {
+                Joystick joystick = new Joystick(0, 0);
+                if (Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+                {
+                    joystick.y = 100;
+                }
+                if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+                {
+                    joystick.y = -100;
+                }
+                if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+                {
+                    joystick.x = -100;
+                }
+                if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+                {
+                    joystick.x = 100;
+                }
+                ControllerState controllerState = new ControllerState();
+                controllerState.name = playerJoins[0].name;
+                controllerState.joystick = joystick;
+                controllerState.circle = false;
+                controllerState.triangle = false;
+                controllerState.plus = false;
+                string jsonControllerState = JsonUtility.ToJson(controllerState);
+                PlayerControllerState(jsonControllerState);
+            }
 
+            // Test HandleExit
+            // TODO: Any of the following code may be modified or deleted
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                HandleExit();
+            }
+
+            // Test the plus button
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                HandleHostControls(false, true);
+            }
+        }
     }
 
     // TODO: The following function may be modified or deleted
@@ -491,18 +493,18 @@ public class GameManager : MonoBehaviour
         m_RoundWinner = GetRoundWinner();
 
 #if UNITY_WEBGL == true && UNITY_EDITOR == false
-        if (m_RoundWinner != null)
-        {
-            for (int i = 0; i < mallard_list.Length; i++)
-            {
-                if (mallard_list[i].m_PlayerName == m_RoundWinner.m_PlayerName)
-                {
-                    mallard_list[i].m_GameStats.addRoundWin();
-                    UpdateStats(mallard_list[i].m_PlayerName, JsonUtility.ToJson(mallard_list[i].m_GameStats));
-                    break;
-                }
-            }
-        }
+        // if (m_RoundWinner != null)
+        // {
+        //     for (int i = 0; i < mallard_list.Length; i++)
+        //     {
+        //         if (mallard_list[i].m_PlayerName == m_RoundWinner.m_PlayerName)
+        //         {
+        //             mallard_list[i].m_GameStats.addRoundWin();
+        //             UpdateStats(mallard_list[i].m_PlayerName, JsonUtility.ToJson(mallard_list[i].m_GameStats));
+        //             break;
+        //         }
+        //     }
+        // }
 #endif
 
         if (m_RoundWinner != null)
@@ -522,10 +524,10 @@ public class GameManager : MonoBehaviour
         {
             if (mallard_list[i].m_Wins == m_NumRoundsToWin)
             {
-#if UNITY_WEBGL == true && UNITY_EDITOR == false
-                    mallard_list[i].m_GameStats.addGameWin();
-                    UpdateStats(mallard_list[i].m_PlayerName, JsonUtility.ToJson(mallard_list[i].m_GameStats));
-#endif
+// #if UNITY_WEBGL == true && UNITY_EDITOR == false
+//                     mallard_list[i].m_GameStats.addGameWin();
+//                     UpdateStats(mallard_list[i].m_PlayerName, JsonUtility.ToJson(mallard_list[i].m_GameStats));
+// #endif
                 return mallard_list[i];
             }
         }
